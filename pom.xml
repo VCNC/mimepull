@@ -50,7 +50,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jvnet.mimepull</groupId>
     <artifactId>mimepull</artifactId>
-    <version>1.9.8-SNAPSHOT</version>
+    <version>1.9.7-VCNC</version>
     <packaging>jar</packaging>
 
     <name>MIME streaming extension</name>
@@ -112,6 +112,29 @@
             <post>dev@mimepull.java.net</post>
         </mailingList>
     </mailingLists>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <name>VCNC Nexus</name>
+            <url>https://nexus.mintnote.com/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>VCNC Private Maven Repository</id>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>ignore</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <checksumPolicy>ignore</checksumPolicy>
+            </snapshots>
+            <url>https://nexus.mintnote.com/repository/maven-releases/</url>
+        </repository>
+    </repositories>
 
     <properties>
         <findbugs.exclude>${project.basedir}/exclude.xml</findbugs.exclude>
